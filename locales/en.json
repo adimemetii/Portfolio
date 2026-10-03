@@ -61,7 +61,7 @@
       },
       "tools": {
         "title": "Tools",
-        "items": ["Git", "GitHub", "VS Code"]
+        "items": ["Git", "GitHub", "VS Code", "Excel"]
       }
     }
   },

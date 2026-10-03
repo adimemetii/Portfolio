@@ -1021,10 +1021,16 @@ ul {
 }
 
 .badges-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+.badges-grid .badge-card {
+    flex: 0 1 calc((100% - 4rem) / 3);
+    min-width: 0;
 }
 
 .cert-card.cert-last {
@@ -1746,6 +1752,14 @@ ul {
     .project-card {
         flex-basis: calc((100% - 20px) / 2);
     }
+
+    .badges-grid {
+        gap: 20px;
+    }
+
+    .badges-grid .badge-card {
+        flex-basis: calc((100% - 20px) / 2);
+    }
 }
 
 @media (max-width: 639px) {
@@ -1754,6 +1768,15 @@ ul {
     }
 
     .project-card {
+        flex: 0 1 100%;
+        width: 100%;
+    }
+
+    .badges-grid {
+        gap: 20px;
+    }
+
+    .badges-grid .badge-card {
         flex: 0 1 100%;
         width: 100%;
     }

@@ -81,7 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             tags: ['AI', 'Machine Learning', 'Python', 'Finance'],
             github: 'https://github.com/adimemetii/finsightai',
-            demo: 'https://finsightai-3ea6.onrender.com/'
+            demo: 'https://finsightai-3ea6.onrender.com/',
+            icon: 'fa-brain'
         },
         {
             title: { en: 'MS Doors and Windows', sq: 'MS Doors and Windows', zh: 'MS Doors and Windows' },
@@ -92,7 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             tags: ['Responsive Design', 'Frontend', 'UI/UX'],
             github: 'https://github.com/adimemetii/MS-DOORS-WINDOWS',
-            demo: 'https://msdoorsandwindows.netlify.app'
+            demo: 'https://msdoorsandwindows.netlify.app',
+            icon: 'fa-code'
         },
         {
             title: { en: 'BioPackKos', sq: 'BioPackKos', zh: 'BioPackKos' },
@@ -103,7 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             tags: ['Corporate Web', 'Eco-friendly', 'Frontend'],
             github: 'https://github.com/adimemetii/BioPackKos',
-            demo: 'https://biopackkos.com'
+            demo: 'https://biopackkos.com',
+            icon: 'fa-recycle'
         },
         {
             title: { en: 'CryptoVison', sq: 'CryptoVison', zh: 'CryptoVison' },
@@ -115,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tags: ['ML', 'Analytics', 'Forecasting'],
             github: 'https://github.com/adimemetii/cryptovision',
             demo: 'https://cryptovision-235t.onrender.com',
+            icon: 'fa-eye',
         },
         {
             title: {
@@ -123,9 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 zh: 'TEB 银行业务财务分析'
             },
             desc: {
-                en: 'Interactive Streamlit dashboard for analyzing the financial performance of TEB Bank. ',
-                sq: 'Dashboard interaktiv në Streamlit për analizën financiare të TEB Bank.',
-                zh: '用于 TEB 银行财务分析的交互式 Streamlit 仪表板.'
+                en: 'Interactive Streamlit dashboard for analyzing the financial performance of TEB Bank. Built on open data from the University of Prishtina Datasphere (https://datasphere.uni-pr.edu/per-kosove/), it covers data cleaning, KPIs and visual analytics to explore trends in banking indicators.',
+                sq: 'Dashboard interaktiv në Streamlit për analizën financiare të TEB Bank, ndërtuar me të dhëna të hapura nga Datasphere i Universitetit të Prishtinës (https://datasphere.uni-pr.edu/per-kosove/): pastrim të dhënash, KPI dhe vizualizime për trendet e treguesve bankarë.',
+                zh: '用于分析 TEB 银行财务表现的交互式 Streamlit 仪表板，基于普里什蒂纳大学 Datasphere 的开放数据，涵盖数据清洗、KPI 和可视化分析，以探索银行指标趋势。'
             },
             tags: ['Python', 'Streamlit', 'Pandas', 'Plotly', 'Data Analytics', 'Open Data'],
             github: 'https://github.com/adimemetii/TEB-Banking-Financial-Analytics-Dashboard',
@@ -136,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 sq: 'Të dhënat: UP Datasphere',
                 zh: '数据：UP Datasphere'
             },
-            icon: 'fa-chart-line'
+            icon: 'fa-building-columns'
         }
     ];
 

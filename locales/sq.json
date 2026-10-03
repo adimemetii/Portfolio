@@ -61,7 +61,7 @@
       },
       "tools": {
         "title": "Mjetet",
-        "items": ["Git", "GitHub", "VS Code"]
+        "items": ["Git", "GitHub", "VS Code", "Excel"]
       }
     }
   },
