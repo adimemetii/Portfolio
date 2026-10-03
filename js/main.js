@@ -115,7 +115,28 @@ document.addEventListener('DOMContentLoaded', () => {
             tags: ['ML', 'Analytics', 'Forecasting'],
             github: 'https://github.com/adimemetii/cryptovision',
             demo: 'https://cryptovision-235t.onrender.com',
-            centered: true
+        },
+        {
+            title: {
+                en: 'TEB-Banking-Financial-Analytics',
+                sq: 'TEB-Banking-Financial-Analytics',
+                zh: 'TEB 银行业务财务分析'
+            },
+            desc: {
+                en: 'Interactive Streamlit dashboard for analyzing the financial performance of TEB Bank. ',
+                sq: 'Dashboard interaktiv në Streamlit për analizën financiare të TEB Bank.',
+                zh: '用于 TEB 银行财务分析的交互式 Streamlit 仪表板.'
+            },
+            tags: ['Python', 'Streamlit', 'Pandas', 'Plotly', 'Data Analytics', 'Open Data'],
+            github: 'https://github.com/adimemetii/TEB-Banking-Financial-Analytics-Dashboard',
+            demo: 'https://tebbanking.streamlit.app/',
+            source: 'https://datasphere.uni-pr.edu/per-kosove/',
+            sourceLabel: {
+                en: 'Data: UP Datasphere',
+                sq: 'Të dhënat: UP Datasphere',
+                zh: '数据：UP Datasphere'
+            },
+            icon: 'fa-chart-line'
         }
     ];
 
@@ -397,25 +418,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const gradient = gradients[index % gradients.length];
 
             const card = document.createElement('div');
-            card.className = `project-card reveal ${proj.centered ? 'project-card-centered' : ''}`;
+            const description = proj.desc[currentLang];
+            card.className = 'project-card reveal';
             card.style.setProperty('--project-gradient', gradient);
             card.innerHTML = `
                 <div class="project-visual">
                     <div class="project-glow"></div>
-                    <i class="fas fa-rocket project-main-icon"></i>
+                    <i class="fas ${proj.icon || 'fa-rocket'} project-main-icon" aria-hidden="true"></i>
                 </div>
                 <div class="project-info">
                     <div class="project-header">
                         <h3>${proj.title[currentLang]}</h3>
                         <div class="project-status ${proj.title[currentLang].includes('Progress') ? 'status-progress' : 'status-completed'}">${proj.title[currentLang].includes('Progress') ? translations.projects.in_progress : translations.projects.completed}</div>
                     </div>
-                    <p>${proj.desc[currentLang]}</p>
+                    <p class="project-description" title="${description.replace(/"/g, '&quot;')}">${description}</p>
+                    ${proj.source ? `<a class="project-source" href="${proj.source}" target="_blank" rel="noopener noreferrer"><i class="fas fa-database" aria-hidden="true"></i> ${proj.sourceLabel[currentLang]}</a>` : ''}
                     <div class="project-tags">
                         ${proj.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                     </div>
                     <div class="project-links">
-                        <a href="${proj.github}" target="_blank" class="btn btn-small btn-secondary"><i class="fab fa-github"></i> ${translations.projects.view_github}</a>
-                        <a href="${proj.demo}" target="_blank" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt"></i> ${translations.projects.live_demo}</a>
+                        <a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-secondary"><i class="fab fa-github" aria-hidden="true"></i> ${translations.projects.view_github}</a>
+                        <a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt" aria-hidden="true"></i> ${translations.projects.live_demo}</a>
                     </div>
                 </div>
             `;
