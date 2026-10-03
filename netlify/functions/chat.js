@@ -11,23 +11,31 @@ exports.handler = async (event) => {
     const messages = Array.isArray(body.messages) ? body.messages : [];
     const lang = ['en', 'sq', 'zh'].includes(body.lang) ? body.lang : 'en';
 
-    // Try every possible variation of the name 'portofolio' and common API keys
-    const apiKey = (
-        process.env.groq_api_key ||
-        process.env.GROQ_API_KEY ||
-        process.env.PORTOFOLIO_API_KEY ||
-        process.env.portofolio ||
-        process.env.PORTOFOLIO ||
-        process.env.portfolio ||
-        process.env.PORTFOLIO ||
-        ''
-    ).trim();
+    // Netlify environment variable names are case-sensitive in practice.
+    // Accept the user's existing `groq_api_key` name as well as the standard
+    // `GROQ_API_KEY`, without ever exposing the secret to the client or logs.
+    const getEnvValue = (name) => {
+      const exactValue = process.env[name];
+      if (typeof exactValue === 'string' && exactValue.trim()) return exactValue;
+
+      const match = Object.entries(process.env).find(([key, value]) =>
+        key.toLowerCase() === name.toLowerCase() && typeof value === 'string' && value.trim()
+      );
+      return match?.[1] || '';
+    };
+
+    const cleanEnvValue = (value) => value
+      .trim()
+      .replace(/^(['"])(.*)\1$/, '$2')
+      .trim();
+
+    const apiKey = cleanEnvValue(getEnvValue('GROQ_API_KEY'));
 
     if (!apiKey) {
       return {
         statusCode: 500,
         body: JSON.stringify({
-          error: 'CRITICAL: API Key not found. I checked for "portofolio", "PORTOFOLIO", "portfolio", etc. Please check Netlify Environment Variables.'
+          error: 'GROQ_API_KEY is missing from the Netlify Functions environment. Add groq_api_key (or GROQ_API_KEY) with Functions scope, then redeploy the site.'
         })
       };
     }
@@ -87,7 +95,7 @@ VERIFIED DATA:
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        model: process.env.GROQ_MODEL || 'openai/gpt-oss-120b',
+        model: cleanEnvValue(getEnvValue('GROQ_MODEL')) || 'openai/gpt-oss-120b',
         messages: [{ role: 'system', content: systemPrompt }, ...messages],
         temperature: 0.25,
         max_tokens: 360
@@ -103,7 +111,7 @@ VERIFIED DATA:
     }
 
     if (!response.ok || data.error) {
-      const error = new Error(data.error?.message || responseText || `OpenRouter returned ${response.status}`);
+      const error = new Error(data.error?.message || responseText || `Groq API returned ${response.status}`);
       error.statusCode = response.status === 401 ? 401 : 502;
       throw error;
     }
