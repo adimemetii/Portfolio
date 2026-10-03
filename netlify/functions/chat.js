@@ -80,7 +80,7 @@ VERIFIED DATA:
   * Intro to Machine Learning (Kaggle)
   * Python & Data Science (Tectigon Academy)
   * Intermediate Machine Learning (Kaggle)
-  * Programming Fundamentals (PërProgramera)
+  * Programming Fundamentals (Për Programera)
 - PROFESSIONAL BADGES:
   * Linux Unhatched (Cisco)
   * Python Essentials 1 & 2 (Cisco)

@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             title: { en: 'Programming Fundamentals', sq: 'Bazat e Programimit', zh: '编程基础' },
-            issuer: { en: 'PërProgramera', sq: 'PërProgramera', zh: 'PërProgramera' },
+            issuer: { en: 'Për Programera', sq: 'Për Programera', zh: 'Për Programera' },
             link: '',
             img: 'assets/images/pp.jpg',
             verify: false
