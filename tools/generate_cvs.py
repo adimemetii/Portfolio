@@ -75,10 +75,10 @@ PROJECTS = [
         "live": "https://biopackkos.com",
     },
     {
-        "title": "CryptoVison",
+        "title": "CryptoVision",
         "description": {
-            "en": "Completed AI project with a live demo and public GitHub repository.",
-            "sq": "Projekt i përfunduar i AI me demo live dhe repository publik në GitHub.",
+            "en": "Advanced cryptocurrency forecasting and analytics platform leveraging machine learning for market trend analysis and price prediction.",
+            "sq": "Platformë e avancuar për parashikimin dhe analitikën e kriptomonedhave që shfrytëzon machine learning për analizën e trendeve dhe parashikimin e çmimeve.",
         },
         "github": "https://github.com/adimemetii/cryptovision",
         "live": "https://cryptovision-235t.onrender.com",
