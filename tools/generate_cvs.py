@@ -77,8 +77,8 @@ PROJECTS = [
     {
         "title": "CryptoVision",
         "description": {
-            "en": "Advanced cryptocurrency forecasting and analytics platform leveraging machine learning for market trend analysis and price prediction.",
-            "sq": "Platformë e avancuar për parashikimin dhe analitikën e kriptomonedhave që shfrytëzon machine learning për analizën e trendeve dhe parashikimin e çmimeve.",
+            "en": "AI-driven cryptocurrency analytics platform using machine learning to forecast market trends and price movements with real-time data pipelines.",
+            "sq": "Platformë analitike e kriptomonedhave e fuqizuar nga AI, që përdor machine learning për parashikimin e trendeve të tregut dhe lëvizjeve të çmimeve.",
         },
         "github": "https://github.com/adimemetii/cryptovision",
         "live": "https://cryptovision-235t.onrender.com",
