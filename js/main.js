@@ -99,23 +99,23 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             title: { en: 'BioPackKos', sq: 'BioPackKos', zh: 'BioPackKos' },
             desc: {
-                en: 'A comprehensive corporate web presence for BioPackKos, integrating modern web standards to promote eco-friendly packaging solutions.',
-                sq: 'Një prezencë profesionale web për BioPackKos, duke integruar standardet moderne të web-it për të promovuar zgjidhjet e paketimit ekologjik.',
-                zh: '为 BioPackKos 构建的全面企业网站，集成现代 Web 标准以推广环保包装解决方案。'
+                en: 'A comprehensive corporate digital ecosystem for BioPackKos, featuring a professional corporate website and an integrated e-commerce catalog. The platform focuses on high-performance UI/UX to promote eco-friendly packaging solutions and sustainable industrial materials, bridging the gap between sustainable manufacturing and digital accessibility.',
+                sq: 'Një ekosistem digjital korporativ gjithëpërfshirës për BioPackKos, i cili përfshin një faqe web profesionale dhe një katalog e-commerce të integruar. Platforma fokusohet në UI/UX performuese për të promovuar zgjidhjet e paketimit ekologjik dhe materiale industriale të qëndrueshme, duke lidhur prodhimin e qëndrueshëm me aksesueshmërinë digjitale.',
+                zh: '为 BioPackKos 构建的全面企业数字化生态系统，包括专业企业网站和集成的电子商务目录。该平台专注于高性能 UI/UX，旨在推广环保包装解决方案和可持续工业材料，在可持续制造与数字化可访问性之间架起桥梁。'
             },
-            tags: ['Corporate Web', 'Eco-friendly', 'Frontend'],
+            tags: ['Corporate Web', 'E-commerce', 'Eco-friendly', 'Frontend'],
             github: 'https://github.com/adimemetii/BioPackKos',
             demo: 'https://biopackkos.com',
             icon: 'fa-recycle'
         },
         {
-            title: { en: 'CryptoVison', sq: 'CryptoVison', zh: 'CryptoVison' },
+            title: { en: 'CryptoVision', sq: 'CryptoVision', zh: 'CryptoVision' },
             desc: {
-                en: 'A completed AI project by Adi Memeti, available through its live demo and GitHub source repository.',
-                sq: 'Një projekt i përfunduar i AI nga Adi Memeti, i disponueshëm përmes demos live dhe repository-t në GitHub.',
-                zh: 'Adi Memeti 的一个已完成 AI 项目，可通过在线演示和 GitHub 源码仓库查看。'
+                en: 'An advanced cryptocurrency forecasting and analytics platform that leverages machine learning to analyze market trends and predict price movements. The project implements data pipelines for real-time financial data and provides visual analytics to assist in informed trading decisions.',
+                sq: 'Një platformë e avancuar për parashikimin dhe analitikën e kriptomonedhave që shfrytëzon machine learning për të analizuar trendet e tregut dhe për të parashikuar lëvizjet e çmimeve. Projekti implementon pipeline-e të dhënash për të dhëna financiare në kohë reale dhe ofron analitikë vizuale për të ndihmuar në vendimin e informuar të tregtimit.',
+                zh: '一个先进的加密货币预测和分析平台，利用机器学习分析市场趋势并预测价格走势。该项目实现了实时财务数据的数据管道，并提供可视化分析以辅助做出明智的交易决策。'
             },
-            tags: ['ML', 'Analytics', 'Forecasting'],
+            tags: ['ML', 'Financial Forecasting', 'Python', 'Data Analytics'],
             github: 'https://github.com/adimemetii/cryptovision',
             demo: 'https://cryptovision-235t.onrender.com',
             icon: 'fa-eye',
