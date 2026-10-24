@@ -76,6 +76,7 @@ VERIFIED DATA:
   * BioPackKos: A corporate website promoting eco-friendly packaging solutions with modern web standards. GitHub: https://github.com/adimemetii/BioPackKos | Live Demo: https://biopackkos.com
   * CryptoVison: An AI project with a live demo and public GitHub repository. GitHub: https://github.com/adimemetii/cryptovision | Live Demo: https://cryptovision-235t.onrender.com
   * TEB-Banking-Financial-Analytics: An interactive Streamlit dashboard for analyzing TEB Bank financial performance. It uses Python, Streamlit, Pandas, Plotly, data cleaning, KPIs, and visual analytics with open data from the University of Prishtina Datasphere. GitHub: https://github.com/adimemetii/TEB-Banking-Financial-Analytics-Dashboard | Live Demo: https://tebbanking.streamlit.app/ | Data source: https://datasphere.uni-pr.edu/per-kosove/
+  * ChurnAI: Customer churn prediction using XGBoost, Python, and machine learning, including data analysis, visualization, model evaluation, and interactive customer predictions. GitHub: https://github.com/adimemetii/ChurnAI
 - CERTIFICATIONS:
   * Intro to Machine Learning (Kaggle)
   * Python & Data Science (Tectigon Academy)

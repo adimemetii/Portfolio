@@ -1001,6 +1001,10 @@ ul {
     margin-top: auto;
 }
 
+.project-links-single {
+    justify-content: center;
+}
+
 .project-links .btn {
     flex: 1;
     min-width: 0;
@@ -1008,6 +1012,10 @@ ul {
     font-size: 0.8rem;
     border-radius: 100px;
     white-space: nowrap;
+}
+
+.project-links-single .btn {
+    flex: 0 1 auto;
 }
 
 /* --- CERTS & BADGES - THE GALLERY --- */

@@ -141,6 +141,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 zh: '数据：UP Datasphere'
             },
             icon: 'fa-building-columns'
+        },
+        {
+            title: { en: 'ChurnAI', sq: 'ChurnAI', zh: 'ChurnAI' },
+            desc: {
+                en: 'Customer churn prediction using XGBoost, Python, and machine learning. Includes data analysis, visualization, model evaluation, and interactive customer predictions.',
+                sq: 'Customer churn prediction using XGBoost, Python, and machine learning. Includes data analysis, visualization, model evaluation, and interactive customer predictions.',
+                zh: 'Customer churn prediction using XGBoost, Python, and machine learning. Includes data analysis, visualization, model evaluation, and interactive customer predictions.'
+            },
+            tags: ['XGBoost', 'Python', 'Machine Learning', 'Data Analysis', 'Visualization'],
+            github: 'https://github.com/adimemetii/ChurnAI',
+            icon: 'fa-user-slash'
         }
     ];
 
@@ -440,9 +451,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="project-tags">
                         ${proj.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
                     </div>
-                    <div class="project-links">
+                    <div class="project-links${proj.demo ? '' : ' project-links-single'}">
                         <a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-secondary"><i class="fab fa-github" aria-hidden="true"></i> ${translations.projects.view_github}</a>
-                        <a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt" aria-hidden="true"></i> ${translations.projects.live_demo}</a>
+                        ${proj.demo ? `<a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary"><i class="fas fa-external-link-alt" aria-hidden="true"></i> ${translations.projects.live_demo}</a>` : ''}
                     </div>
                 </div>
             `;
