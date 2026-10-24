@@ -1015,7 +1015,7 @@ ul {
 }
 
 .project-links-single .btn {
-    flex: 0 1 auto;
+    flex: 0 1 calc((100% - 8px) / 2);
 }
 
 /* --- CERTS & BADGES - THE GALLERY --- */
