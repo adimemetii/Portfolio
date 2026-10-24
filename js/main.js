@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navigationTerms = {
         '#home': ['home', 'kreu', 'ballina', '首页', '主页'],
-        '#about': ['about', 'rreth', 'adi', '关于', '介绍'],
+        '#about': ['about', 'rreth', 'who is adi', 'about adi', 'adi memeti', '关于', '介绍'],
         '#skills': ['skills', 'aftësi', 'aftësitë', 'kompetenca', 'njohuri', '技能'],
         '#projects': ['projects', 'projekt', 'projektet', '作品', '项目'],
             '#certifications': ['certification', 'certifications', 'certifikat', 'certifkat', 'certif', 'dëshmi', '证书', '认证'],
@@ -284,10 +284,31 @@ document.addEventListener('DOMContentLoaded', () => {
             .toLocaleLowerCase()
             .normalize('NFD')
             .replace(/[\u0300-\u036f]/g, '');
-        const match = Object.entries(navigationTerms).find(([, terms]) =>
-            terms.some(term => normalized.includes(term))
-        );
+        // Prefer the section the visitor is asking about. For example,
+        // "Which projects has Adi built?" contains both "projects" and
+        // "Adi", but it must navigate to Projects rather than About.
+        const navigationPriority = [
+            '#projects',
+            '#skills',
+            '#certifications',
+            '#badges',
+            '#cv',
+            '#contact',
+            '#about',
+            '#home'
+        ];
+        const match = navigationPriority
+            .map(section => [section, navigationTerms[section]])
+            .find(([, terms]) => terms.some(term => normalized.includes(term)));
         return match?.[0] || null;
+    }
+
+    function isProjectQuestion(text) {
+        const normalized = text
+            .toLocaleLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
+        return /\b(project\w*|projekt\w*)\b/.test(normalized) || normalized.includes('项目') || normalized.includes('作品');
     }
 
     function navigateToSection(sectionId) {
@@ -375,6 +396,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 replyText = replyText.replace(/\[NAV: #\w+\]\s*/, '');
             }
             if (requestedSection) replyText = replyText.replace(/\[NAV: #[\w-]+\]\s*/, '');
+
+            // Keep the key project visible even if the model summarizes the
+            // list too aggressively. ChurnAI is a featured project and should
+            // always be discoverable from a project question.
+            if (isProjectQuestion(normalizedText) && !/\bChurnAI\b/i.test(replyText)) {
+                const churnAiNote = currentLang === 'sq'
+                    ? ' Gjithashtu, një nga projektet e Adi është ChurnAI, një projekt për parashikimin e largimit të klientëve me XGBoost dhe Python.'
+                    : currentLang === 'zh'
+                        ? ' 另外，Adi 的项目还包括 ChurnAI，这是一个使用 XGBoost 和 Python 进行客户流失预测的机器学习项目。'
+                        : ' ChurnAI is also one of Adi\'s projects: a customer-churn prediction project built with XGBoost, Python, and machine learning.';
+                replyText = `${replyText.trim()}\n\n${churnAiNote}`;
+            }
 
             addChatMessage('assistant', replyText);
             conversationHistory.push({ role: 'assistant', content: data.reply });
