@@ -16,6 +16,7 @@ from reportlab.pdfgen import canvas
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = ROOT / "assets" / "docs"
 PHOTO = ROOT / "assets" / "images" / "profilepicrmvbg.png"
+METRIO_LOGO = ROOT / "logo.jpg"
 PAGE_W, PAGE_H = A4
 SIDEBAR_W = 166
 CONTENT_X = 193
@@ -98,13 +99,16 @@ PROJECTS = [
 
 CONTENT = {
     "en": {
-        "subtitle": "DATA SCIENCE INTERN",
+        "subtitle": "DATA SCIENCE & AI ENGINEER | CEO, METRIO",
         "location": "Pristina, Kosovo  |  Data Science and Software Engineering",
         "profile_title": "PROFILE",
-        "profile": "Computer & Software Engineering student focused on Data Science, Machine Learning, and Generative AI. Completed practical training in Python, data analysis, ML modeling, and modern AI technologies, with a strong focus on practical and data-driven solutions. Since August 2026, I have been part of Tectigon Academy as a Data Science Intern.",
+        "profile": "Computer & Software Engineering student and Data Science & AI Engineer focused on Machine Learning, Data Analytics, and Generative AI. CEO of Metrio, a company focused on data, analytics, and AI that help businesses grow. Completed a Data Science internship at Tectigon Academy in October 2026.",
         "experience": "EXPERIENCE",
-        "role": "DATA SCIENCE INTERN, TECTIGON ACADEMY | August 2026 - Present",
+        "role": "CEO, METRIO | October 2026 - Present",
         "experience_bullets": [
+            "Leading Metrio, a company delivering data, analytics, and AI solutions that help businesses grow.",
+            "Defining data-driven products and practical AI services for business growth.",
+            "DATA SCIENCE INTERN, TECTIGON ACADEMY | August 2026 - October 2026",
             "Practical work with Python, Pandas, SQL, and data analysis.",
             "Application of Machine Learning concepts, data preparation, and model evaluation.",
             "Use of Tableau and Microsoft Power BI for visualization and reporting.",
@@ -145,16 +149,19 @@ CONTENT = {
         "core": "CORE STRENGTHS",
         "language_items": [("Albanian", "Native / Excellent proficiency"), ("English", "Fluent / Excellent proficiency")],
         "core_items": ["Python", "SQL", "Pandas", "ML", "Power BI", "Tableau", "Git", "Excel", "LLM / RAG"],
-        "footer": "Adi Memeti  |  DATA SCIENCE INTERN",
+        "footer": "Adi Memeti  |  CEO, METRIO",
     },
     "sq": {
-        "subtitle": "PRAKTIKANT I DATA SCIENCE",
+        "subtitle": "INXHINIER I DATA SCIENCE & AI | CEO, METRIO",
         "location": "Prishtinë, Kosovë  |  Data Science dhe Inxhinieri Softuerike",
         "profile_title": "PROFILI",
-        "profile": "Student i Inxhinierisë Kompjuterike dhe Softuerike me fokus në Data Science, Machine Learning dhe Generative AI. Kam përfunduar trajnime praktike në Python, analizë të të dhënave, modelim ML dhe teknologji moderne të AI, me fokus të fortë në zgjidhje praktike dhe të bazuara në të dhëna. Nga gushti 2026 jam pjesë e Tectigon Academy si Data Science Intern.",
+        "profile": "Student i Inxhinierisë Kompjuterike dhe Softuerike dhe Inxhinier i Data Science & AI, me fokus në Machine Learning, Data Analytics dhe Generative AI. Jam CEO i Metrio, kompani e fokusuar në data, analitikë dhe AI që ndihmojnë bizneset të rriten. Kam përfunduar internshipin në Data Science në Tectigon Academy në tetor 2026.",
         "experience": "PËRVOJA",
-        "role": "DATA SCIENCE INTERN, TECTIGON ACADEMY | Gusht 2026 - Tani",
+        "role": "CEO, METRIO | Tetor 2026 - Tani",
         "experience_bullets": [
+            "Udhëheq Metrio, kompani që ofron zgjidhje me data, analitikë dhe AI që ndihmojnë bizneset të rriten.",
+            "Përcaktoj produkte të bazuara në data dhe shërbime praktike AI për rritjen e bizneseve.",
+            "DATA SCIENCE INTERN, TECTIGON ACADEMY | Gusht 2026 - Tetor 2026",
             "Punë praktike me Python, Pandas, SQL dhe analizë të të dhënave.",
             "Aplikim i koncepteve të Machine Learning, përgatitjes së të dhënave dhe vlerësimit të modeleve.",
             "Përdorim i Tableau dhe Microsoft Power BI për vizualizim dhe raportim.",
@@ -195,7 +202,7 @@ CONTENT = {
         "core": "PIKAT KRYESORE",
         "language_items": [("Shqip", "Gjuhë amtare / Njohuri të shkëlqyera"), ("Anglisht", "Rrjedhshëm / Njohuri të shkëlqyera")],
         "core_items": ["Python", "SQL", "Pandas", "ML", "Power BI", "Tableau", "Git", "Excel", "LLM / RAG"],
-        "footer": "Adi Memeti  |  PRAKTIKANT I DATA SCIENCE",
+        "footer": "Adi Memeti  |  CEO, METRIO",
     },
 }
 
@@ -310,6 +317,8 @@ def draw_header(c: canvas.Canvas, data: dict[str, object]) -> float:
     c.setFont(BOLD, 25)
     c.setFillColor(BODY)
     c.drawString(CONTENT_X, PAGE_H - 20 - 25, "ADI MEMETI")
+    if METRIO_LOGO.exists():
+        c.drawImage(ImageReader(str(METRIO_LOGO)), CONTENT_RIGHT - 34, PAGE_H - 56, width=30, height=30, mask="auto", preserveAspectRatio=True)
     c.setFont(BOLD, 11.5)
     c.setFillColor(BLUE)
     c.drawString(CONTENT_X, PAGE_H - 51 - 11.5, str(data["subtitle"]))
@@ -370,7 +379,10 @@ def draw_page_one(c: canvas.Canvas, data: dict[str, object]) -> None:
     c.drawString(CONTENT_X, PAGE_H - y - 8.45, str(data["role"]))
     y += 17
     for bullet in data["experience_bullets"]:
-        y = draw_lines(c, bullet, CONTENT_X, y, CONTENT_W, size=8.1, leading=11.5, bullet="-") + 3
+        if str(bullet).startswith("DATA SCIENCE INTERN"):
+            y = draw_lines(c, bullet, CONTENT_X, y, CONTENT_W, font=BOLD, size=8.1, leading=11.5) + 3
+        else:
+            y = draw_lines(c, bullet, CONTENT_X, y, CONTENT_W, size=8.1, leading=11.5, bullet="-") + 3
     y += 5
     y = draw_section(c, str(data["education"]), y)
     c.setFont(BOLD, 8.2)
@@ -450,6 +462,6 @@ def build_pdf(language: str, output_path: Path) -> None:
 
 if __name__ == "__main__":
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    build_pdf("en", OUTPUT_DIR / "Adi_Memeti_CV_English (1).pdf")
-    build_pdf("sq", OUTPUT_DIR / "Adi_Memeti_CV_Shqip (1).pdf")
+    build_pdf("en", OUTPUT_DIR / "Adi_Memeti_CV_English.pdf")
+    build_pdf("sq", OUTPUT_DIR / "Adi_Memeti_CV_Shqip.pdf")
     print("Generated English and Shqip CV PDFs.")
