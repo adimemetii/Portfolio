@@ -660,6 +660,15 @@ ul {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px var(--primary-glow);
 }
 
+.company-card {
+    background: linear-gradient(135deg, rgba(129, 140, 248, 0.14), rgba(192, 132, 252, 0.08));
+}
+
+.company-card:hover {
+    border-color: var(--secondary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(192, 132, 252, 0.28);
+}
+
 .internship-inner {
     display: flex;
     align-items: center;
@@ -677,6 +686,11 @@ ul {
     background: #fff;
     padding: 0.75rem;
     box-shadow: var(--shadow-deep);
+}
+
+.company-logo {
+    padding: 0.35rem;
+    background: #08111f;
 }
 
 .internship-details h3 {
@@ -706,6 +720,11 @@ ul {
     padding: 0.2rem 0.8rem;
     background: rgba(56, 189, 248, 0.1);
     border-radius: 100px;
+}
+
+.company-tagline {
+    background: rgba(192, 132, 252, 0.12);
+    color: #d8b4fe !important;
 }
 
 /* --- SKILLS SECTION - BENTO GRID --- */
