@@ -89,7 +89,7 @@ VERIFIED DATA:
   * Python Essentials 1 & 2 (Cisco)
   * Generative AI Fundamentals (Databricks)
   * Introduction to Data Science (Cisco)
-- EXPERIENCE: Adi completed the practical part of his Data Science internship at Tectigon Academy in October. He is now the CEO of Metrio, a company focused on "Data, analytics & AI that help businesses grow." He received a professional reference from Tectigon Academy in recognition of his work and contribution during his internship.
+- EXPERIENCE: Adi is currently working as a Data Science Intern at Tectigon Academy, where he continues to refine his skills and contribute to real-world projects. He received a professional reference from Tectigon Academy in recognition of his work and contribution during his internship.
 - CONTACT:
   * Email: adimemeti97@gmail.com
   * LinkedIn: adi-memeti-880b31237
