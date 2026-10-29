@@ -152,6 +152,21 @@ document.addEventListener('DOMContentLoaded', () => {
             tags: ['XGBoost', 'Python', 'Machine Learning', 'Data Analysis', 'Visualization'],
             github: 'https://github.com/adimemetii/ChurnAI',
             icon: 'fa-user-slash'
+        },
+        {
+            title: {
+                en: 'SafeCity-Analytics-Los-Angeles-Crime-Forecasting',
+                sq: 'SafeCity-Analytics-Los-Angeles-Crime-Forecasting',
+                zh: 'SafeCity-Analytics-Los-Angeles-Crime-Forecasting'
+            },
+            desc: {
+                en: 'CrimeVision AI analyzes Los Angeles crime trends using Python and XGBoost, visualizes patterns, and forecasts monthly crime incidents for the next 12 months.',
+                sq: 'CrimeVision AI analyzes Los Angeles crime trends using Python and XGBoost, visualizes patterns, and forecasts monthly crime incidents for the next 12 months.',
+                zh: 'CrimeVision AI analyzes Los Angeles crime trends using Python and XGBoost, visualizes patterns, and forecasts monthly crime incidents for the next 12 months.'
+            },
+            tags: ['XGBoost', 'Python', 'Crime Analytics', 'Data Visualization', 'Forecasting'],
+            github: 'https://github.com/adimemetii/SafeCity-Analytics-Los-Angeles-Crime-Forecasting',
+            icon: 'fa-shield-halved'
         }
     ];
 

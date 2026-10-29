@@ -78,6 +78,7 @@ VERIFIED DATA:
   * CryptoVison: An AI project with a live demo and public GitHub repository. GitHub: https://github.com/adimemetii/cryptovision | Live Demo: https://cryptovision-235t.onrender.com
   * TEB-Banking-Financial-Analytics: An interactive Streamlit dashboard for analyzing TEB Bank financial performance. It uses Python, Streamlit, Pandas, Plotly, data cleaning, KPIs, and visual analytics with open data from the University of Prishtina Datasphere. GitHub: https://github.com/adimemetii/TEB-Banking-Financial-Analytics-Dashboard | Live Demo: https://tebbanking.streamlit.app/ | Data source: https://datasphere.uni-pr.edu/per-kosove/
   * ChurnAI: Customer churn prediction using XGBoost, Python, and machine learning, including data analysis, visualization, model evaluation, and interactive customer predictions. GitHub: https://github.com/adimemetii/ChurnAI
+  * SafeCity-Analytics-Los-Angeles-Crime-Forecasting: CrimeVision AI analyzes Los Angeles crime trends using Python and XGBoost, visualizes patterns, and forecasts monthly crime incidents for the next 12 months. GitHub: https://github.com/adimemetii/SafeCity-Analytics-Los-Angeles-Crime-Forecasting
 - CERTIFICATIONS:
   * Intro to Machine Learning (Kaggle)
   * Python & Data Science (Tectigon Academy)
