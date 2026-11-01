@@ -50,7 +50,7 @@ PROJECTS = [
     {
         "title": "FinSightAI",
         "description": {
-            "en": "AI-powered financial analysis platform for market and financial data insights.",
+            "en": "Python/Flask/MySQL/Power BI platform for cleaning and forecasting business data; delivered company-scoped analytics and exports.",
             "sq": "Platformë financiare e fuqizuar nga AI për analiza të tregut dhe të dhënave financiare.",
         },
         "github": "https://github.com/adimemetii/finsightai",
@@ -59,7 +59,7 @@ PROJECTS = [
     {
         "title": "MS Doors and Windows",
         "description": {
-            "en": "Responsive corporate website focused on product presentation and UI/UX.",
+            "en": "HTML/JavaScript/Netlify responsive corporate website for product presentation and user experience.",
             "sq": "Faqe web korporative responsive me fokus në prezantimin e produkteve dhe UI/UX.",
         },
         "github": "https://github.com/adimemetii/MS-DOORS-WINDOWS",
@@ -68,7 +68,7 @@ PROJECTS = [
     {
         "title": "BioPackKos",
         "description": {
-            "en": "Modern corporate web presence promoting eco-friendly packaging solutions.",
+            "en": "HTML/JavaScript/Netlify corporate site with an e-commerce catalog for eco-friendly packaging solutions.",
             "sq": "Prezencë moderne web që promovon zgjidhje ekologjike për paketim.",
         },
         "github": "https://github.com/adimemetii/BioPackKos",
@@ -77,7 +77,7 @@ PROJECTS = [
     {
         "title": "CryptoVision",
         "description": {
-            "en": "AI-driven cryptocurrency analytics platform using machine learning to forecast market trends and price movements with real-time data pipelines.",
+            "en": "Python/Flask/MySQL/Pandas/Plotly workspace for cleaning data, interactive visualization, and time-aware forecasting.",
             "sq": "Platformë analitike e kriptomonedhave e fuqizuar nga AI, që përdor machine learning për parashikimin e trendeve të tregut dhe lëvizjeve të çmimeve.",
         },
         "github": "https://github.com/adimemetii/cryptovision",
@@ -86,12 +86,30 @@ PROJECTS = [
     {
         "title": "TEB-Banking-Financial-Analytics",
         "description": {
-            "en": "Interactive Streamlit dashboard for TEB Bank financial performance, built with open UP Datasphere data and KPI/visual analytics.",
+            "en": "Python/Streamlit/Pandas/Plotly dashboard with 2,687 financial records; Random Forest improved held-out RMSE by 23.8% versus the mean baseline.",
             "sq": "Dashboard interaktiv në Streamlit për performancën financiare të TEB Bank, me të dhëna të hapura nga UP Datasphere dhe analiza KPI/vizuale.",
         },
         "github": "https://github.com/adimemetii/TEB-Banking-Financial-Analytics-Dashboard",
         "live": "https://tebbanking.streamlit.app/",
         "data": "https://datasphere.uni-pr.edu/per-kosove/",
+    },
+    {
+        "title": "ChurnAI",
+        "description": {
+            "en": "Python/XGBoost/Pandas churn workflow covering analysis, visualization, model evaluation, and interactive customer scoring.",
+            "sq": "Workflow me Python/XGBoost/Pandas për churn që përfshin analizë, vizualizim, vlerësim të modelit dhe vlerësim interaktiv të klientëve.",
+        },
+        "github": "https://github.com/adimemetii/ChurnAI",
+        "live": None,
+    },
+    {
+        "title": "SafeCity-Analytics-Los-Angeles-Crime-Forecasting",
+        "description": {
+            "en": "Python/XGBoost/Pandas crime analytics workflow for Los Angeles trends and monthly incident forecasts for the next 12 months.",
+            "sq": "Workflow me Python/XGBoost/Pandas për analizën e trendeve të krimit në Los Angeles dhe parashikimin mujor të incidenteve për 12 muaj.",
+        },
+        "github": "https://github.com/adimemetii/SafeCity-Analytics-Los-Angeles-Crime-Forecasting",
+        "live": None,
     },
 ]
 
@@ -350,7 +368,8 @@ def draw_projects(c: canvas.Canvas, data: dict[str, object], y_top: float) -> fl
         c.setFillColor(BLUE)
         c.drawString(x, PAGE_H - link_top - 6.9, "GitHub  |  Live Demo")
         c.linkURL(project["github"], (x, PAGE_H - link_top - 8.5, x + 28, PAGE_H - link_top + 1.5), relative=0)
-        c.linkURL(project["live"], (x + 40, PAGE_H - link_top - 8.5, x + 95, PAGE_H - link_top + 1.5), relative=0)
+        if project.get("live"):
+            c.linkURL(project["live"], (x + 40, PAGE_H - link_top - 8.5, x + 95, PAGE_H - link_top + 1.5), relative=0)
         if project.get("data"):
             c.setFont(REGULAR, 6.7)
             label = str(data["data_source"])
@@ -424,7 +443,8 @@ def draw_page_two(c: canvas.Canvas, data: dict[str, object]) -> None:
         c.setFillColor(BLUE)
         c.drawString(x, PAGE_H - top - 18, "GitHub  |  Live Demo")
         c.linkURL(project["github"], (x, PAGE_H - top - 19.5, x + 28, PAGE_H - top - 9), relative=0)
-        c.linkURL(project["live"], (x + 40, PAGE_H - top - 19.5, x + 95, PAGE_H - top - 9), relative=0)
+        if project.get("live"):
+            c.linkURL(project["live"], (x + 40, PAGE_H - top - 19.5, x + 95, PAGE_H - top - 9), relative=0)
     draw_footer(c, data)
 
 
